@@ -1,3 +1,6 @@
+#ifndef TOYROBOT_OPTION_H_
+#define TOYROBOT_OPTION_H_
+
 #include "optionException.hpp"
 
 template<class T>
@@ -5,14 +8,12 @@ class Option {
   bool isDefined;
   T x;
 
-public:
+ public:
 
-  Option(T t, bool d) :
-    x(t),
-    isDefined(d)
-  { }
+  Option(T t, bool d) : x(t), isDefined(d)
+  { /**/ }
 
-  T get() {
+  T get() const {
     if( isSome() ) {
       return x;
     } else {
@@ -20,7 +21,7 @@ public:
     }
   }
 
-  T getOrElse(T orElse) {
+  T getOrElse(const T& orElse) const {
     if( isSome() ) {
       return x;
     } else {
@@ -28,21 +29,21 @@ public:
     }
   }
 
-  bool isNone() {
+  bool isNone() const {
     return ! isDefined;
   }
 
-  bool isSome() {
+  bool isSome() const {
     return isDefined;
   }
 
-  bool isEmpty() {
+  bool isEmpty() const {
     return ! isDefined;
   }
 };
 
 template<class T>
-Option<T> Some(T t) {
+Option<T> Some(const T& t) {
   return Option<T>(t, true);
 }
 
@@ -50,3 +51,5 @@ template<class T>
 Option<T> None() {
   return Option<T>(T(), false);
 }
+
+#endif // TOYROBOT_OPTION_H_

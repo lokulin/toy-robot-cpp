@@ -1,7 +1,9 @@
-#include <exception>
-using namespace std;
+#ifndef TOYROBOT_OPTIONEXCEPTION_H_
+#define TOYROBOT_OPTIONEXCEPTION_H_
 
-class noneGetException: public exception
+#include <exception>
+
+class noneGetException: public std::exception
 {
   virtual const char* what() const throw()
   {
@@ -9,3 +11,4 @@ class noneGetException: public exception
   }
 } noneGetEx;
 
+#endif // TOYROBOT_OPTIONEXCEPTION_H_
