@@ -18,16 +18,18 @@ public:
     : location(location), facing(facing), table(table)
   { /**/ };
 
-  void move() const;
+  void move();
 
-  void left() const;
+  void left();
 
-  void right() const;
+  void right();
 
   void report() const;
 
   void place(Point location, float facing, Option<Table> table);
 
 };
+
+const float rmod(const float a, const float b);
 
 #endif // TOYROBOT_ROBOT_H_
