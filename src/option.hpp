@@ -5,8 +5,8 @@
 
 template<class T>
 class Option {
-  bool isDefined;
   T x;
+  bool isDefined;
 
  public:
 
@@ -17,7 +17,7 @@ class Option {
     if( isSome() ) {
       return x;
     } else {
-      throw noneGetEx;
+      throw noneGetException();
     }
   }
 

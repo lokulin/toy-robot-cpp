@@ -33,7 +33,11 @@
 
 # Editor files
 *.swp
+*.userprefs
+*.cproj
+*.sln
 
 # bin
 toyrobot
 read
+bin

@@ -9,6 +9,6 @@ class noneGetException: public std::exception
   {
     return "Called get on None.";
   }
-} noneGetEx;
+};
 
 #endif // TOYROBOT_OPTIONEXCEPTION_H_
