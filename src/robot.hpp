@@ -4,6 +4,8 @@
 #include "option.hpp"
 #include "table.hpp"
 #include "point.hpp"
+#include <map>
+#include <string>
 
 class Robot {
 public:
@@ -24,7 +26,7 @@ public:
 
   void right();
 
-  void report() const;
+  void report(const std::map<int,std::string> itodir) const;
 
   void place(Point location, float facing, Option<Table> table);
 

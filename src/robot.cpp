@@ -1,5 +1,7 @@
 #include <cmath>
 #include <iostream>
+#include <map>
+#include <string>
 
 #include "robot.hpp"
 
@@ -19,8 +21,8 @@ void Robot::right() {
   facing = rmod(facing + 0.5, 2.0);
 }
 
-void Robot::report() const {
-  if (table.isSome()) std::cout << location.x << "," << location.y << "," << facing << "\n";
+void Robot::report(const std::map<int,std::string> itodir) const {
+  if (table.isSome()) std::cout << location.x << "," << location.y << "," << itodir.at(facing) << "\n";
 }
 
 void Robot::place(Point location, float facing
