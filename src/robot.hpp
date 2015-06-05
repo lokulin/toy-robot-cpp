@@ -1,11 +1,11 @@
 #ifndef TOYROBOT_ROBOT_H_
 #define TOYROBOT_ROBOT_H_
+#include <string>
+#include <boost/bimap.hpp>
 
 #include "option.hpp"
 #include "table.hpp"
 #include "point.hpp"
-#include <map>
-#include <string>
 
 class Robot {
 public:
@@ -26,7 +26,7 @@ public:
 
   void right();
 
-  void report(const std::map<int,std::string> itodir) const;
+  void report(const boost::bimap<std::string, int>& dirs);
 
   void place(Point location, float facing, Option<Table> table);
 
