@@ -41,3 +41,13 @@
 toyrobot
 read
 bin
+
+# VS files
+.vscode/
+.vs/
+.editorconfig
+Debug/
+x64/
+CppProperties.json
+*.vcxproj*
+*.code-workspace
